@@ -1,0 +1,33 @@
+import React from "react";
+
+const Navlink = ({ list=[], navLabel, listHeading }) => {
+  return (
+    <div className="relative group inline-block">
+      <div className="cursor-pointer font-semibold text-base transition-all duration-300 ease-smooth pb-[2px] border-b-2 border-transparent hover:border-primaryRed">
+        {navLabel}
+      </div>
+      <div className="absolute top-full left-0 hidden group-hover:block min-w-max">
+        <div className="bg-white border-2 border-gray-200 rounded-md shadow-lg mt-1">
+          {listHeading && (
+            <div className="text-gray-500 text-sm flex justify-center items-center p-2 px-5">
+              {listHeading}
+            </div>
+          )}
+          <ul>
+            {list &&
+              list.map((item, index) => (
+                <li
+                  key={index}
+                  className="list-none hover:bg-gray-200 p-2 px-7 cursor-pointer font-semibold"
+                >
+                  {item}
+                </li>
+              ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Navlink;
