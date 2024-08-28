@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import SelectInput from "../common/SelectInput";
 import { FaSearch } from "react-icons/fa";
 
-const AdvanceFilter = ({ name, id }) => {
+const AdvanceFilter = () => {
+  const [productType, setProductType] = useState("");
+  const [company, setCompany] = useState("");
+  const [model, setModel] = useState("");
+  const [variant, setVariant] = useState("");
+
   const productTypes = [
-    // { value: "", label: "Filter By" },
     { value: "car", label: "Car" },
     { value: "bike", label: "Bike" },
     { value: "scooter", label: "Scooter" },
   ];
+
   const companyName = [
     { value: "bmw", label: "BMW" },
     { value: "audi", label: "Audi" },
@@ -35,57 +40,58 @@ const AdvanceFilter = ({ name, id }) => {
     { value: "altima", label: "Altima" },
   ];
 
-  const handleChange = (e) => {
-    console.log(e.target.value);
-  };
+  const handleProductTypeChange = (e) => setProductType(e.target.value);
+  const handleCompanyChange = (e) => setCompany(e.target.value);
+  const handleModelChange = (e) => setModel(e.target.value);
+  const handleVariantChange = (e) => setVariant(e.target.value);
+
   return (
-    <>
-      <div className="flex justify-center items-center space-x-5 mb-2">
+    <div className="p-4 md:p-6 lg:p-8">
+      <div className="flex flex-wrap justify-center items-center space-x-3 mb-2">
         <SelectInput
           options={productTypes}
           name="productType"
           id="productType"
-          value={productTypes.value}
-          className="mb-4"
+          value={productType}
+          className="mb-2"
           defaultValue="Choose Type"
-          onChange={handleChange}
+          onChange={handleProductTypeChange}
         />
         <SelectInput
           options={companyName}
           name="companyName"
           id="companyName"
-          value={companyName.value}
-          className="mb-4"
+          value={company}
+          className="mb-2"
           defaultValue="Choose Company"
-          onChange={handleChange}
+          onChange={handleCompanyChange}
         />
         <SelectInput
           options={carModels}
           name="carModels"
           id="carModels"
-          value={carModels.value}
-          className="mb-4"
+          value={model}
+          className="mb-2"
           defaultValue="Choose Model"
-          onChange={handleChange}
+          onChange={handleModelChange}
         />
         <SelectInput
           options={carModels}
-          name="varients"
-          id="varients"
-          value={carModels.value}
-          className="mb-4"
-          defaultValue="Choose Varient"
-          onChange={handleChange}
+          name="variants"
+          id="variants"
+          value={variant}
+          className="mb-2"
+          defaultValue="Choose Variant"
+          onChange={handleVariantChange}
         />
 
-       {/* Search button */}
-      <div className="flex items-center justify-center h-12">
-        <button className="text-white text-lg bg-primaryRed p-3 rounded-md">
-          <FaSearch />
-        </button>
+        <div className="flex justify-center items-center w-full sm:w-auto mb-2">
+          <button className="text-white text-lg bg-primaryRed p-3 rounded-md w-full sm:w-auto flex items-center justify-center">
+            <FaSearch />
+          </button>
+        </div>
       </div>
-      </div>
-    </>
+    </div>
   );
 };
 

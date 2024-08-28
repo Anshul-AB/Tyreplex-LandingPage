@@ -11,13 +11,13 @@ import "slick-carousel/slick/slick-theme.css";
 
 const HeroSection = () => {
   return (
-    <div className="bg-white p-5 border-2 shadow-md rounded-md m-2 ">
+    <div className="bg-white p-5 border-2 shadow-md rounded-md m-2">
       {/* Address */}
-      <div className="grid grid-cols-5 ">
-        <div className="col-span-2">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+        <div className="md:col-span-2">
           {/* heading */}
-          <div className="flex justify-between items-start">
-            <div className="text-[28px] font-medium">
+          <div className="flex justify-between items-start flex-wrap">
+            <div className="text-lg md:text-[28px] font-medium">
               SHREE HEMKUNT TYRES AND SERVICES
             </div>
             <div className="flex justify-center items-center mt-2 space-x-1">
@@ -27,7 +27,7 @@ const HeroSection = () => {
           </div>
 
           {/* Rating */}
-          <div className="flex justify-start items-center space-x-2">
+          <div className="flex justify-start items-center space-x-2 mt-2 md:mt-0">
             <span className="bg-green text-white p-1 px-2 rounded-md text-xs">
               4.9
             </span>
@@ -39,7 +39,7 @@ const HeroSection = () => {
               <FaStar className="text-yellow-400" />
             </div>
             <span className="hover:underline">2278 Reviews</span>
-            <button className=" text-gray-400 rounded-md p-1 px-2 text-sm border border-gray-300 hover:bg-gray-300 hover:text-gray-600">
+            <button className="text-gray-400 rounded-md p-1 px-2 text-sm border border-gray-300 hover:bg-gray-300 hover:text-gray-600">
               Rate
             </button>
           </div>
@@ -47,8 +47,8 @@ const HeroSection = () => {
           {/* Address */}
           <div className="space-y-2 py-5">
             {/* Address */}
-            <div className="flex justify-start items-start text-gray-800 text-base space-x-3">
-              <FaLocationDot className="text-xl text-gray-500" />
+            <div className="flex justify-start items-start text-gray-800 text-sm md:text-base space-x-3">
+              <FaLocationDot className="text-lg md:text-xl text-gray-500" />
               <p>
                 PLOT NUMBER-09 GROUND FLOOR CISF CAMPUS ROAD, AHINSA KHAND-02
                 INDIRAPURAM, Ghaziabad, Uttar Pradesh, 201014
@@ -56,29 +56,29 @@ const HeroSection = () => {
             </div>
 
             {/* Operating Hours */}
-            <div className="flex justify-start items-center text-gray-500 text-base space-x-3">
-              <IoMdTime className="text-xl" />
+            <div className="flex justify-start items-center text-gray-500 text-sm md:text-base space-x-3">
+              <IoMdTime className="text-lg md:text-xl" />
               <span>Open - Monday to Sunday - 10:00AM to 8:00PM</span>
             </div>
           </div>
 
           {/* Button */}
-          <button className="text-primaryRed p-2 rounded-[4px] font-medium px-10 border border-primaryRed hover:bg-primaryRed hover:text-white transition-all duration-300 ease-smooth">
+          <button className="text-primaryRed p-2 rounded-[4px] font-medium px-6 md:px-10 border border-primaryRed hover:bg-primaryRed hover:text-white transition-all duration-300 ease-smooth">
             Get Directions
           </button>
         </div>
 
         {/* Images */}
-        <div className="col-span-3 grid grid-cols-2  p-5">
+        <div className="md:col-span-3 grid grid-cols-2 gap-4 p-5">
           <img
             src={photo1}
-            alt="TyrePlex Photo 1 "
-            className="rounded-md p-5 pt-0"
+            alt="TyrePlex Photo 1"
+            className="rounded-md p-2 md:p-5"
           />
           <img
             src={photo1}
-            alt="TyrePlex Photo 1 "
-            className="rounded-md p-5 pt-0"
+            alt="TyrePlex Photo 1"
+            className="rounded-md p-2 md:p-5"
           />
         </div>
       </div>
@@ -86,7 +86,7 @@ const HeroSection = () => {
       {/* Reviews */}
       <div className="my-5">
         <div className="text-lg font-semibold mb-2">2278 Google Reviews</div>
-        <ReviewSlider/>
+        <ReviewSlider />
       </div>
     </div>
   );

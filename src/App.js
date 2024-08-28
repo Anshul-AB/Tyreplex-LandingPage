@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div className="font-primary bg-gray-100 box-border">
       <Navbar />
-      <div className="mx-16">
+      <div className="mx-10 md:mx-16">
         <HeroSection />
         <Deals />
         <Services />
