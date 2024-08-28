@@ -3,17 +3,14 @@ import React, { useState } from "react";
 const Navlink = ({ list = [], navLabel, listHeading }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
-    <div className="relative inline-block md:inline-block">
+    <div
+      className="relative inline-block md:inline-block"
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
       {/* Navlink Label */}
-      <div
-        className="cursor-pointer font-semibold text-base transition-all duration-300 ease-smooth pb-[2px] border-b-2 border-transparent hover:border-primaryRed"
-        onClick={toggleDropdown}
-      >
+      <div className="cursor-pointer font-semibold text-base transition-all duration-300 ease-smooth pb-[2px] border-b-2 border-transparent hover:border-primaryRed">
         {navLabel}
       </div>
 
@@ -34,7 +31,6 @@ const Navlink = ({ list = [], navLabel, listHeading }) => {
               <li
                 key={index}
                 className="list-none hover:bg-gray-200 p-2 px-7 cursor-pointer font-semibold"
-                onClick={() => setIsOpen(false)} 
               >
                 {item}
               </li>
